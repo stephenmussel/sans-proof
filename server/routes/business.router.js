@@ -13,8 +13,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   .then(result => {
       res.send(result.rows)
   }).catch(error => {
-      console.log('error in GET /business', error);
-      
+      console.log('error in GET /business', error); 
   })
 });
 
