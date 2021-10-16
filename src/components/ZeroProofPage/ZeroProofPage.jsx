@@ -1,7 +1,7 @@
 import { use } from 'passport';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import ZeroProofItem from '../ZeroProofItem/ZeroProofItem';
 
 function ZeroProofPage() {
 
@@ -16,8 +16,14 @@ function ZeroProofPage() {
 
   return (
     <div className="container">
-      <p>Zero Proof</p>
-      {JSON.stringify(businessList)}
+      <h3>Zero Proof</h3>
+      {/* {JSON.stringify(businessList)} */}
+      {businessList.map(business => (
+        <ZeroProofItem
+          key={business.id}
+          business={business}
+        />
+      ))}
     </div>
   );
 }
