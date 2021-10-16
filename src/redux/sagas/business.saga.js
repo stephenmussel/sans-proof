@@ -6,6 +6,7 @@ function* fetchBusiness() {
         yield console.log('fetchBusiness saga wired!');
         const response = yield axios.get('/api/business');
         yield console.log('this is response from DB', response.data);
+        yield put({type: 'SET_BUSINESS', payload: response.data})
         
         
 
