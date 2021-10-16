@@ -17,6 +17,7 @@ function ZeroProofPage() {
   return (
     <div className="container">
       <p>Zero Proof</p>
+      {JSON.stringify(businessList)}
     </div>
   );
 }
