@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function ZeroProofPage() {
 
-  const businessList = useSelector(store => store)
+  const businessList = useSelector(store => store.business)
 
   return (
     <div className="container">
