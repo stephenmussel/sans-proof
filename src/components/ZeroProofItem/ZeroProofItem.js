@@ -1,7 +1,15 @@
-function ZeroProofItem() {
+function ZeroProofItem({ business }) {
+
+    const viewDetails = () => {
+        console.log('clicked on image!');
+        
+    }
+
     return(
         <div>
-            <p>zero proof item</p>
+            <img src={business.image_url} onClick={viewDetails}/>
+            <p><b>{business.name}</b></p>
+            <p>{business.description}</p>
         </div>
     )
 }

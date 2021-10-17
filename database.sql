@@ -47,7 +47,7 @@ VALUES
 	'colitampls.com',
 	'true',
 	'Great mocktails!',
-	'images/sans_url_best.jpg',
+	'images/sans_url_best.png',
 	'1');
 
 -- testing martina insert
@@ -65,7 +65,7 @@ VALUES
 	'martinarestaurant.com',
 	'false',
 	'Fantastic variety zero proof drinks, all at great prices.',
-	'images/sans_url_best.jpg',
+	'images/sans_url_best.png',
 	'2');
 	
 -- testing sanjusan insert
@@ -83,7 +83,7 @@ VALUES
 	'sanjusanrestaurant.com',
 	'false',
 	'Loved the patio and enjoyed my drinks.',
-	'images/sans_url_best.jpg',
+	'images/sans_url_best.png',
 	'2');
 	
 -- testing cardamom insert
@@ -101,7 +101,7 @@ VALUES
 	'cardamommpls.com',
 	'false',
 	'The service was exceptional, the drinks were meh.',
-	'images/sans_url_better.jpg',
+	'images/sans_url_better.png',
 	'1');
 
 -- testing rosalia insert
@@ -119,7 +119,7 @@ VALUES
 	'rosaliapizza.com',
 	'false',
 	'Drinks were ok.',
-	'images/sans_url_good.jpg',
+	'images/sans_url_good.png',
 	'2');
 
 SELECT * FROM "business";
