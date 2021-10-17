@@ -19,6 +19,7 @@ import ZeroProofPage from '../ZeroProofPage/ZeroProofPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import ZeroProofDetails from '../ZeroProofDetails/ZeroProofDetails';
 
 import './App.css';
 
@@ -61,11 +62,18 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+            // logged in shows ZeroProofPage else shows LoginPage
             exact
             path="/zeroproof"
           >
             <ZeroProofPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/details/:id" // url for client side nav
+          >
+            <ZeroProofDetails />
           </ProtectedRoute>
 
           <Route
