@@ -78,7 +78,7 @@ function ZeroProofPage() {
 // DELETEs business added by user
 const deleteBus = (event) => {
   console.log('clicked delete button!');
-  const action = {type: 'DELETE_BUSINESS, payload: event.target.value'}
+  const action = {type: 'DELETE_BUSINESS', payload: event.target.value}
   dispatch(action);
 }
 
@@ -105,7 +105,7 @@ const deleteBus = (event) => {
       {businessList.map(business => (
         <div key={business.id}>
           <ZeroProofItem
-            // key={business.id}
+            key={business.id}
             business={business}
           />
           <button value={business.id} onClick={(event) => deleteBus(event)}>Delete</button>
