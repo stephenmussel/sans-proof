@@ -7,7 +7,7 @@ function ZeroProofItem({ business }) {
     const history = useHistory();
 
     const viewDetails = () => {
-        console.log('clicked on image!');
+        // console.log('clicked on image!');
         const action = ({type: 'FETCH_DETAILS', payload: business})
         dispatch(action);
         history.push(`/details/${business.id}`)
