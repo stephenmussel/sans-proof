@@ -11,3 +11,9 @@ function* fetchSelectedDetails(action) {
         
     }
 }
+
+function* detailsSaga() {
+    yield takeLatest('FETCH_DETAILS', fetchSelectedDetails);
+}
+
+export default detailsSaga;
