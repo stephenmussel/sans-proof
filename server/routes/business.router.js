@@ -40,7 +40,17 @@ router.get('/:id', (req, res) => {
  * Add business for logged in user
  */
  router.post('/', rejectUnauthenticated, (req, res) => {
-
+   console.log('this is req.body', req.body);
+   console.log('this is req.user.id', req.user.id);
+   const insertQuery = `INSERT INTO "business" ("name") VALUES ($1);`;
+   pool.query(insertQuery, [req.body, req.user.id])
+    .then(result => {
+      console.log('this is POST result', result);
+      res.sendStatus(201);
+    }).catch(error => {
+      console.log('error in adding new business', error);
+      res.sendStatus(500)
+    })
 });
 
 /**
