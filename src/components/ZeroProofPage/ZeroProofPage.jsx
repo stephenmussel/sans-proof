@@ -78,6 +78,8 @@ function ZeroProofPage() {
 // DELETEs business added by user
 const deleteBus = (event) => {
   console.log('clicked delete button!');
+  const action = {type: 'DELETE_BUSINESS, payload: event.target.value'}
+  dispatch(action);
 }
 
   return (
@@ -106,7 +108,7 @@ const deleteBus = (event) => {
             // key={business.id}
             business={business}
           />
-          <button onClick={(event) => deleteBus(event)}>Delete</button>
+          <button value={business.id} onClick={(event) => deleteBus(event)}>Delete</button>
             <br /><br />
         </div>
       ))}

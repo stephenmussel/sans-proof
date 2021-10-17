@@ -25,9 +25,19 @@ function* postBusiness(action) {
     }
 }
 
+function* deleteBusiness() {
+    try {
+        console.log('deleteBusiness wired!');
+        
+    } catch(error) {
+        console.log('error in deleting business', error);
+    }
+}
+
 function* businessSaga() {
     yield takeLatest('FETCH_BUSINESS', fetchBusiness);
     yield takeLatest('POST_BUSINESS', postBusiness);
+    yield takeLatest('DELETE_BUSINESS', deleteBusiness);
 }
 
 export default businessSaga;
