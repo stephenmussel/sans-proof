@@ -15,9 +15,11 @@ function ZeroProofDetails() {
         dispatch(action)
     }, [businessId])
 
+    // NOTES: favorite
     const newFav = () => {
         console.log('clicked favorite button!');
-        
+        const action = {type: 'ADD_FAVORITE', payload: businessId}
+        dispatch(action);
     }
 
     return(
