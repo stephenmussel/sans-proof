@@ -105,7 +105,7 @@ const deleteBus = (event) => {
       {businessList.map(business => (
         <div key={business.id}>
           <ZeroProofItem
-            key={business.id}
+            // key={business.id}
             business={business}
           />
           <button value={business.id} onClick={(event) => deleteBus(event)}>Delete</button>

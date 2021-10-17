@@ -18,7 +18,7 @@ function* postBusiness(action) {
         // yield console.log('this is action.payload:', action.payload);
         const newBus = action.payload
         yield axios.post('/api/business', newBus);
-        // GET after POST to display new list
+        // GET after POST to display updated list
         yield put({type: 'FETCH_BUSINESS'});
     } catch(error) {
         console.log('error in postBusiness', error);
@@ -27,9 +27,12 @@ function* postBusiness(action) {
 
 function* deleteBusiness(action) {
     try {
-        console.log('deleteBusiness wired!');
-    
-        
+        yield console.log('deleteBusiness wired!');
+        const busId = action.payload
+        yield console.log('this is busId to delete: ', busId);
+        yield axios.delete(`/api/business/${busId}`)
+        // GET after DELETE to display updated list
+        yield put({type: 'FETCH_BUSINESS'})
     } catch(error) {
         console.log('error in deleting business', error);
     }

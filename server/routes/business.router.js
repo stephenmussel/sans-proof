@@ -73,14 +73,16 @@ router.post('/', rejectUnauthenticated, (req, res) => {
  * DELETE a business that logged in user added
  */
  router.delete('/:id', rejectUnauthenticated, (req, res) => {
-   console.log('this is req.params.id', req.params.id);
+   console.log('this ID of business to delete: ', req.params.id);
+   console.log('this is logged in user ID: ', req.user.id);
+   
    const busId = req.params.id;
    const deleteQuery = `DELETE FROM "business"
    WHERE "id" = $1
    AND "user_id" = $2;`;
    pool.query(deleteQuery, [busId, req.user.id])
     .then(result => {
-      console.log('this is result', result);
+      // console.log('this is result', result);
       res.sendStatus(201)
     }).catch(error => {
       console.log('error in deleting business', error);
