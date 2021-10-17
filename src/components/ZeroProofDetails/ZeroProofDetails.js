@@ -17,11 +17,19 @@ function ZeroProofDetails() {
 
     return(
         <div>
-            <h3>Selected business: {businessDetails.name}</h3>
-            <h3>Details: </h3>
+            <h3>Selected business: <em>{businessDetails.name}</em></h3>
+            {/* <h3>JSON: </h3> */}
+                {/* <p>{JSON.stringify(businessDetails)}</p> */}
+            <p><b>rating: <br /></b>{businessDetails.rating}</p>
+            <p><b>description: <br /></b>{businessDetails.description}</p>
+            <p><b>address: <br /></b>{businessDetails.address}<br />{businessDetails.city}, {businessDetails.state} {businessDetails.zip}</p>
+            <p><b>website: <br /></b>{businessDetails.website}</p>
+
+            <h3>JSON: </h3>
                 <p>{JSON.stringify(businessDetails)}</p>
-            <h3>allParams: </h3>
-                <p>{JSON.stringify(allParams)}</p>
+
+            {/* <h3>allParams: </h3> */}
+                {/* <p>{JSON.stringify(allParams)}</p> */}
         </div>
     )
 }
