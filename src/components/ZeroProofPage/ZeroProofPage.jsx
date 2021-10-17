@@ -28,6 +28,12 @@ function ZeroProofPage() {
       case 'name':
         setBus({...newBus, name: event.target.value})
         break;
+      case 'rating':
+        setBus({...newBus, rating: event.target.value})
+        break;
+      case 'description':
+        setBus({...newBus, description: event.target.value})
+        break;
     }
   }
 
@@ -49,6 +55,8 @@ function ZeroProofPage() {
       <div>
         <form onSubmit={addNewBus}> 
           <input required id={"name"} type="text" placeholder="name" value={newBus.name} onChange={handleBusInfo}/>
+          <input required id={"rating"} type="text" placeholder="rating" value={newBus.rating} onChange={handleBusInfo}/>
+          <input required id={"description"} type="text" placeholder="description" value={newBus.description} onChange={handleBusInfo}/>
           <input type="submit" value="Add Business"/>
         </form>
       </div>
