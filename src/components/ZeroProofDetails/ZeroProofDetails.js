@@ -15,9 +15,16 @@ function ZeroProofDetails() {
         dispatch(action)
     }, [businessId])
 
+    const newFav = () => {
+        console.log('clicked favorite button!');
+        
+    }
+
     return(
         <div>
             <h3>Selected business: <em>{businessDetails.name}</em></h3>
+            {/* NOTES: favorite */}
+            <button onClick={() => newFav()}>Favorite</button>
             {/* <h3>JSON: </h3> */}
                 {/* <p>{JSON.stringify(businessDetails)}</p> */}
             <p><b>rating: <br /></b>{businessDetails.rating}</p>
