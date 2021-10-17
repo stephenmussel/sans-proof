@@ -28,9 +28,6 @@ function ZeroProofPage() {
       case 'name':
         setBus({...newBus, name: event.target.value})
         break;
-    
-      default:
-        break;
     }
   }
 
@@ -50,7 +47,7 @@ function ZeroProofPage() {
       <h3>Zero Proof</h3>
       {/* {JSON.stringify(businessList)} */}
       <div>
-        <form onClick={addNewBus}> 
+        <form onSubmit={addNewBus}> 
           <input required id={"name"} type="text" placeholder="name" value={newBus.name} onChange={handleBusInfo}/>
           <input type="submit" value="Add Business"/>
         </form>

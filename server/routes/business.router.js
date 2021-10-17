@@ -41,11 +41,17 @@ router.get('/:id', (req, res) => {
  */
  router.post('/', rejectUnauthenticated, (req, res) => {
    console.log('this is req.body', req.body);
+   const newBus = req.body
    console.log('this is req.user.id', req.user.id);
-   const insertQuery = `INSERT INTO "business" ("name") VALUES ($1);`;
-   pool.query(insertQuery, [req.body, req.user.id])
-    .then(result => {
+   const insertQuery = `
+   INSERT INTO "business" ("name", "user_id") 
+   VALUES ($1, $2)
+   RETURNING "id";`;
+
+   pool.query(insertQuery, [newBus.name, req.user.id])
+    .then(result => {      
       console.log('this is POST result', result);
+      console.log('new business ID: ', result.rows[0].id);
       res.sendStatus(201);
     }).catch(error => {
       console.log('error in adding new business', error);

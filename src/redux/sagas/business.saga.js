@@ -12,10 +12,12 @@ function* fetchBusiness() {
     }
 }
 
-function* postBusiness() {
+function* postBusiness(action) {
     try {
-        yield console.log('postBusiness saga wired!');
-        
+        // yield console.log('postBusiness saga wired!');
+        yield axios.post('/api/business', action.payload)
+        // yield console.log('this is reponse from user input', response.data);
+        yield put({type: 'FETCH_SHELF'})
     } catch(error) {
         console.log('error in postBusiness', error);
     }
