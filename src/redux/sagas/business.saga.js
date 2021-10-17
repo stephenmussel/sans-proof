@@ -18,6 +18,7 @@ function* postBusiness(action) {
         yield console.log('this is action.payload:', action.payload);
         const newBus = action.payload
         yield axios.post('/api/business', newBus);
+        // GET after POST to display new list
         yield put({type: 'FETCH_BUSINESS'});
     } catch(error) {
         console.log('error in postBusiness', error);

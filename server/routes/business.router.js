@@ -44,9 +44,22 @@ router.post('/', rejectUnauthenticated, (req, res) => {
   const newBus = req.body;
   console.log('this is logged in user ID: ', req.user.id);
   // NUM 4
-  const insertQuery = `INSERT INTO "business" ("name", "user_id") VALUES ($1, $2);`;
+  const insertQuery = `
+  INSERT INTO "business" ("name", "rating", "description", "address", "city", "state", "zip", "phone", "website", "user_id") 
+  VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);`;
   // NUM 5
-  pool.query(insertQuery, [newBus.name, req.user.id])
+  pool.query(insertQuery, [
+    newBus.name, 
+    newBus.rating, 
+    newBus.description,
+    newBus.address,
+    newBus.city,
+    newBus.state,
+    newBus.zip,
+    newBus.phone,
+    newBus.website,
+    req.user.id])
+
    .then(result => {
      console.log('this is POST result', result);
      res.sendStatus(201);

@@ -11,7 +11,14 @@ function ZeroProofPage() {
   // NUM 1
   let defaultBus = {
     name: '',
-    // rating: '',
+    rating: '',
+    description: '',
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
+    phone: '',
+    website: '',
   }
 
   // comes after defaultBus defined!
@@ -31,9 +38,30 @@ function ZeroProofPage() {
       case 'name':
         setBus({...newBus, name: event.target.value})
         break;
-      // case 'rating':
-      //   setBus({...newBus, rating: event.target.value})
-      //   break;
+      case 'rating':
+        setBus({...newBus, rating: event.target.value})
+        break;
+      case 'description':
+        setBus({...newBus, description: event.target.value})
+        break;
+      case 'address':
+        setBus({...newBus, address: event.target.value})
+        break;
+      case 'city':
+        setBus({...newBus, city: event.target.value})
+        break;
+      case 'state':
+        setBus({...newBus, state: event.target.value})
+        break;
+      case 'zip':
+        setBus({...newBus, zip: event.target.value})
+        break;
+      case 'phone':
+        setBus({...newBus, phone: event.target.value})
+        break;
+      case 'website':
+        setBus({...newBus, website: event.target.value})
+        break;
     }
   }
 
@@ -56,7 +84,15 @@ function ZeroProofPage() {
         <form onSubmit={addNewBus}> 
           <input id={"name"} type="text" placeholder="name" value={newBus.name} onChange={handleBusInfo}/>
           {/* NUM 3 ...then go to business router*/}
-          {/* <input id={"rating"} type="text" placeholder="rating" value={newBus.rating} onChange={handleBusInfo}/> */}
+          <input id={"rating"} type="number" placeholder="rating" value={newBus.rating} onChange={handleBusInfo}/>
+          <input id={"description"} type="text" placeholder="description" value={newBus.description} onChange={handleBusInfo}/>
+          <input id={"address"} type="text" placeholder="address" value={newBus.address} onChange={handleBusInfo}/>
+          <input id={"city"} type="text" placeholder="city" value={newBus.city} onChange={handleBusInfo}/>
+          <input id={"state"} maxLength="2" type="text" placeholder="state" value={newBus.state} onChange={handleBusInfo}/>
+          <input id={"zip"} maxLength="5" type="number" placeholder="zip" value={newBus.zip} onChange={handleBusInfo}/>
+          <input id={"phone"} type="text" placeholder="phone" value={newBus.phone} onChange={handleBusInfo}/>
+          <input id={"website"} type="text" placeholder="website" value={newBus.website} onChange={handleBusInfo}/>
+
           <input type="submit" value="Add Business"/>
         </form>
       </div>
