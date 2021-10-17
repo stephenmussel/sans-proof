@@ -8,8 +8,10 @@ function ZeroProofPage() {
   const businessList = useSelector(store => store.business)
   const dispatch = useDispatch();
 
+  // NUM 1
   let defaultBus = {
     name: '',
+    // rating: '',
   }
 
   // comes after defaultBus defined!
@@ -25,15 +27,13 @@ function ZeroProofPage() {
     console.log('in handleBusInfo');
     console.log(event.target.value);
     switch (event.target.id) {
+      // NUM 2
       case 'name':
         setBus({...newBus, name: event.target.value})
         break;
-      case 'rating':
-        setBus({...newBus, rating: event.target.value})
-        break;
-      case 'description':
-        setBus({...newBus, description: event.target.value})
-        break;
+      // case 'rating':
+      //   setBus({...newBus, rating: event.target.value})
+      //   break;
     }
   }
 
@@ -54,9 +54,9 @@ function ZeroProofPage() {
       {/* {JSON.stringify(businessList)} */}
       <div>
         <form onSubmit={addNewBus}> 
-          <input required id={"name"} type="text" placeholder="name" value={newBus.name} onChange={handleBusInfo}/>
-          <input required id={"rating"} type="text" placeholder="rating" value={newBus.rating} onChange={handleBusInfo}/>
-          <input required id={"description"} type="text" placeholder="description" value={newBus.description} onChange={handleBusInfo}/>
+          <input id={"name"} type="text" placeholder="name" value={newBus.name} onChange={handleBusInfo}/>
+          {/* NUM 3 ...then go to business router*/}
+          {/* <input id={"rating"} type="text" placeholder="rating" value={newBus.rating} onChange={handleBusInfo}/> */}
           <input type="submit" value="Add Business"/>
         </form>
       </div>

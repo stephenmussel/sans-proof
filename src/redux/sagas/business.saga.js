@@ -5,7 +5,7 @@ function* fetchBusiness() {
     try {
         // yield console.log('fetchBusiness saga wired!');
         const response = yield axios.get('/api/business');
-        // yield console.log('this is response from DB', response.data);
+        yield console.log('this is response from DB', response.data);
         yield put({type: 'SET_BUSINESS', payload: response.data})
     } catch(error) {
         console.log('error in fetchBusiness saga', error); 
@@ -15,9 +15,10 @@ function* fetchBusiness() {
 function* postBusiness(action) {
     try {
         // yield console.log('postBusiness saga wired!');
-        yield axios.post('/api/business', action.payload)
-        // yield console.log('this is reponse from user input', response.data);
-        yield put({type: 'FETCH_SHELF'})
+        yield console.log('this is action.payload:', action.payload);
+        const newBus = action.payload
+        yield axios.post('/api/business', newBus);
+        yield put({type: 'FETCH_BUSINESS'});
     } catch(error) {
         console.log('error in postBusiness', error);
     }
