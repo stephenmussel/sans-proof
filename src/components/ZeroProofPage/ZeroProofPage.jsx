@@ -73,7 +73,11 @@ function ZeroProofPage() {
     dispatch(action);
     // updates defaultBus based on user input(s)
     setBus(defaultBus);
-    
+}
+
+// DELETEs business added by user
+const deleteBus = (event) => {
+  console.log('clicked delete button!');
 }
 
   return (
@@ -97,10 +101,14 @@ function ZeroProofPage() {
         </form>
       </div>
       {businessList.map(business => (
-        <ZeroProofItem
-          key={business.id}
-          business={business}
-        />
+        <div key={business.id}>
+          <ZeroProofItem
+            // key={business.id}
+            business={business}
+          />
+          <button onClick={(event) => deleteBus(event)}>Delete</button>
+            <br /><br />
+        </div>
       ))}
     </div>
   );
