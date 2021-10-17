@@ -18,6 +18,16 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 });
 
 /**
+ * GET details of selected business
+ */
+router.get('/:id', (req, res) => {
+  console.log('in GET details');
+  
+})
+
+
+
+/**
  * POST route template
  */
 router.post('/', (req, res) => {
