@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import ZeroProofDetails from '../ZeroProofDetails/ZeroProofDetails';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 import './App.css';
 
@@ -74,6 +75,13 @@ function App() {
             path="/details/:id" // url for client side nav
           >
             <ZeroProofDetails />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/profile"
+          >
+            <ProfilePage />
           </ProtectedRoute>
 
           <Route

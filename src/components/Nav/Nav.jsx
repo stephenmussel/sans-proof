@@ -32,6 +32,10 @@ function Nav() {
               Zero Proof
             </Link>
 
+            <Link className="navLink" to="/profile">
+              Profile
+            </Link>
+
             <LogOutButton className="navLink" />
           </>
         )}
