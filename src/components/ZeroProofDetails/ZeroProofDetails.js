@@ -16,9 +16,9 @@ function ZeroProofDetails() {
     }, [businessId])
 
     // NOTES: favorite
-    const newFav = () => {
+    const addFav = (event) => {
         console.log('clicked favorite button!');
-        const action = {type: 'POST_FAVORITE', payload: businessId}
+        const action = {type: 'POST_FAVORITE', payload: event.target.value}
         dispatch(action);
     }
 
@@ -26,7 +26,7 @@ function ZeroProofDetails() {
         <div>
             <h3>Selected business: <em>{businessDetails.name}</em></h3>
             {/* NOTES: favorite */}
-            <button onClick={() => newFav()}>Favorite</button>
+            <button value={businessDetails.id} onClick={(event) => addFav(event)}>Favorite</button>
             {/* <h3>JSON: </h3> */}
                 {/* <p>{JSON.stringify(businessDetails)}</p> */}
             <p><b>rating: <br /></b>{businessDetails.rating}</p>
