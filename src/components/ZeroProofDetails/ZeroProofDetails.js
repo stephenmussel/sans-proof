@@ -18,7 +18,7 @@ function ZeroProofDetails() {
     // NOTES: favorite
     const newFav = () => {
         console.log('clicked favorite button!');
-        const action = {type: 'ADD_FAVORITE', payload: businessId}
+        const action = {type: 'POST_FAVORITE', payload: businessId}
         dispatch(action);
     }
 
