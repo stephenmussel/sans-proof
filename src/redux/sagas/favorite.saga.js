@@ -3,6 +3,8 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* postFav(action) {
     try {
+        yield console.log('postFav saga wired!');
+        
 
     } catch(error) {
         console.log('error in adding favorite', error);
