@@ -8,7 +8,7 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
  */
 router.get('/', rejectUnauthenticated, (req, res) => {
   // displays newest entries first
-  let queryText = `SELECT * FROM "business" ORDER BY "id" DESC;` 
+  const queryText = `SELECT * FROM "business" ORDER BY "id" DESC;`;
   pool.query(queryText)
   .then(result => {
       res.send(result.rows)

@@ -16,6 +16,10 @@ function* postFav(action) {
 function* fetchFav() {
     try {
         yield console.log('fetchFav wired!');
+        const response = yield axios.get('/api/favorite');
+        yield console.log('this is the response', response.data);
+        
+
         
 
     } catch(error) {

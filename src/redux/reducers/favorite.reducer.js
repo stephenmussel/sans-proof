@@ -1,4 +1,4 @@
-const business = (state = [], action) => {
+const favorite = (state = [], action) => {
     console.log('in favorite reducer');
     console.log('this is action.payload: ', action.payload);
     if(action.type === 'SET_FAVORITE') {
@@ -7,4 +7,4 @@ const business = (state = [], action) => {
     return state;
 }
 
-export default business;
+export default favorite;
