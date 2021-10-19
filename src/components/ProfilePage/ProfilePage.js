@@ -15,7 +15,7 @@ function ProfilePage() {
     return(
         <div>
             <h3>{user.username}'s Profile</h3>
-            <p>List of favorite businesses</p>
+            <p>List of favorite businesses will include: <em><b>Name, </b><b>Notes</b></em></p>
             <button>Update</button>&nbsp;
             <button>Delete</button><br /><br />
             {JSON.stringify(favoriteList)}

@@ -9,8 +9,8 @@ function UserPage() {
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
-      <p>Take your shoes off, stay a while. Peruse our selection of zero-proof options, 
-        add your own, share some if you're keen. We're all friends, cheers. </p>
+      <p>Take your shoes off, stay a while. Check out our selection of zero-proof options, 
+        add your own or share some if you're keen. We're all friends, cheers. </p>
       <LogOutButton className="btn" />
     </div>
   );

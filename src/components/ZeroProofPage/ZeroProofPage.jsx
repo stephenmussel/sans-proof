@@ -108,6 +108,8 @@ const deleteBus = (event) => {
             // key={business.id}
             business={business}
           />
+          {/* FIX condtionally render delete button only if user added */}
+          {/* FIX ...no other user should be able to delete a business someone else added */}
           <button value={business.id} onClick={(event) => deleteBus(event)}>Delete</button>
             <br /><br />
         </div>

@@ -9,6 +9,8 @@ function ZeroProofDetails() {
     const dispatch = useDispatch();
     const allParams = useParams();
     const businessId = allParams.id;
+    // NOTES: just added!
+    const history = useHistory();
 
     useEffect(() => {
         const action = {type: 'FETCH_DETAILS', payload: {id: businessId}}
@@ -20,6 +22,8 @@ function ZeroProofDetails() {
         console.log('clicked favorite button!');
         const action = {type: 'POST_FAVORITE', payload: event.target.value}
         dispatch(action);
+        // NOTES: just added!
+        history.push('/profile');
     }
 
     return(

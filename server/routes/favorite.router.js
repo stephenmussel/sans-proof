@@ -8,6 +8,13 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
  */
 router.get('/', (req, res) => {
   const queryText = `SELECT * FROM "favorite" ORDER BY "id" DESC;`;
+  // SELECT "business"."id", "business"."name", "business"."notes" FROM "business" JOIN "favorite" ON "business"."id" = "favorite"."business_id" WHERE ;
+  // const insertQuery = `
+  // SELECT "name" 
+  // FROM "business"
+  // JOIN "favorite" 
+  // ON "business"."id" = $1;`;
+  
   pool.query(queryText)
     .then(result => {
       res.send(result.rows)
@@ -30,12 +37,6 @@ router.post('/', (req, res) => {
   console.log('ID of business to add: ', req.params.id);
   console.log('logged in user ID: ', req.user.id);
   const busId = req.params.id;
-  // SELECT "name" FROM "business" JOIN "favorite" ON "business"."id" = "favorite"."business_id";
-  // const insertQuery = `
-  // SELECT "name" 
-  // FROM "business"
-  // JOIN "favorite" 
-  // ON "business"."id" = $1;`;
   const insertQuery = `
   INSERT INTO "favorite" ("user_id", "business_id") 
   VALUES ($1, $2);`;
