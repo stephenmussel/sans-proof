@@ -3,9 +3,12 @@ import { useHistory } from 'react-router-dom'
 
 function FavoriteItem({favorite}) {
 
+    const dispatch = useDispatch();
+
     const deleteFav = (event) => {
         console.log('clicked delete favorite button!');
-        
+        const action = {type: 'DELETE_FAVORITE', payload: event.target.value}
+        dispatch(action);
         
     }
 

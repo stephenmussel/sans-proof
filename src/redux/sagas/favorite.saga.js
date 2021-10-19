@@ -21,7 +21,17 @@ function* fetchFav() {
         yield put({type: 'SET_FAVORITE', payload: response.data})
 
     } catch(error) {
-        console.log('error if fetchFav', error);
+        console.log('error if fetchFav', error);  
+    }
+}
+
+function* deleteFav() {
+    try {
+        console.log('deleteFav saga wired!');
+        
+
+    } catch(error) {
+        console.log('error in deleting favorite', error);
         
     }
 }
@@ -29,6 +39,7 @@ function* fetchFav() {
 function* favoriteSaga() {
     yield takeLatest('POST_FAVORITE', postFav);
     yield takeLatest('FETCH_FAVORITE', fetchFav);
+    yield takeLatest('DELETE_FAVORITE', deleteFav);
 }
 
 export default favoriteSaga;
