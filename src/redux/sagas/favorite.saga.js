@@ -18,9 +18,7 @@ function* fetchFav() {
         yield console.log('fetchFav wired!');
         const response = yield axios.get('/api/favorite');
         yield console.log('this is the response', response.data);
-        
-
-        
+        yield put({type: 'SET_FAVORITE', payload: response.data})
 
     } catch(error) {
         console.log('error if fetchFav', error);

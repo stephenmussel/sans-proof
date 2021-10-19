@@ -6,16 +6,20 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 /**
  * GET all favorites on the page
  */
-router.get('/', (req, res) => {
-  const queryText = `SELECT * FROM "favorite" ORDER BY "id" DESC;`;
-  // SELECT "business"."id", "business"."name", "business"."notes" FROM "business" JOIN "favorite" ON "business"."id" = "favorite"."business_id" WHERE ;
-  // const insertQuery = `
-  // SELECT "name" 
-  // FROM "business"
-  // JOIN "favorite" 
-  // ON "business"."id" = $1;`;
+router.get('/', rejectUnauthenticated, (req, res) => {  
+  // const queryText = `SELECT "business"."id", "business"."name", "business"."notes" FROM "business"
+  // JOIN "favorite" ON "business"."id" = "favorite"."business_id"
+  // WHERE "favorite"."business_id" = "business"."id"
+  // GROUP BY "business"."id", "business"."name", "business"."notes";`;
+  console.log('this is req.user.id', req.user.id);
+  const userId = req.user.id;
   
-  pool.query(queryText)
+  const queryText = `SELECT "business"."id", "business"."name", "business"."notes" FROM "business"
+  JOIN "favorite" ON "business"."id" = "favorite"."business_id"
+  WHERE "favorite"."user_id" = $1
+  GROUP BY "business"."id", "business"."name", "business"."notes";`;
+  
+  pool.query(queryText, [userId])
     .then(result => {
       res.send(result.rows)
     }).catch(error => {
