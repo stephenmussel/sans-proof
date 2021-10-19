@@ -20,13 +20,12 @@ function ProfilePage() {
             {/* {JSON.stringify(favoriteList)} */}
             <br /><br />
             {favoriteList.map(favorite => (
-                <div>
-                    {/* <b>{favorite.name}</b> */}
-                    {/* <p><em>Notes: </em>{favorite.notes}</p> */}
+                <div key={favorite.id}>
+                    <FavoriteItem 
+                        favorite={favorite}
+                    />
                 </div>
             ))}
-            <button>Update</button>&nbsp;
-            <button>Delete</button><br /><br />
         </div>
     )
 }
