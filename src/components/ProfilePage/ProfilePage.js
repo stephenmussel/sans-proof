@@ -15,9 +15,15 @@ function ProfilePage() {
     return(
         <div>
             <h3>{user.username}'s Profile</h3>
-            <p>List of favorite businesses will include: <em><b>Name, </b><b>Notes</b></em></p>
-            {JSON.stringify(favoriteList)}
+            {/* <p>List of favorite businesses will include: <em><b>Name, </b><b>Notes</b></em></p> */}
+            {/* {JSON.stringify(favoriteList)} */}
             <br /><br />
+            {favoriteList.map(favorite => (
+                <div>
+                    <b>{favorite.name}</b>
+                    <p><em>Notes: </em>{favorite.notes}</p>
+                </div>
+            ))}
             <button>Update</button>&nbsp;
             <button>Delete</button><br /><br />
         </div>

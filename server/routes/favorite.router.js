@@ -7,13 +7,9 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
  * GET all favorites on the page
  */
 router.get('/', rejectUnauthenticated, (req, res) => {  
-  // const queryText = `SELECT "business"."id", "business"."name", "business"."notes" FROM "business"
-  // JOIN "favorite" ON "business"."id" = "favorite"."business_id"
-  // WHERE "favorite"."business_id" = "business"."id"
-  // GROUP BY "business"."id", "business"."name", "business"."notes";`;
   console.log('this is req.user.id', req.user.id);
   const userId = req.user.id;
-  
+  // list of favorited businesses by user
   const queryText = `SELECT "business"."id", "business"."name", "business"."notes" FROM "business"
   JOIN "favorite" ON "business"."id" = "favorite"."business_id"
   WHERE "favorite"."user_id" = $1
