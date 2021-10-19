@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import FavoriteItem from '../FavoriteItem/FavoriteItem';
 
 function ProfilePage() {
 
@@ -20,8 +21,8 @@ function ProfilePage() {
             <br /><br />
             {favoriteList.map(favorite => (
                 <div>
-                    <b>{favorite.name}</b>
-                    <p><em>Notes: </em>{favorite.notes}</p>
+                    {/* <b>{favorite.name}</b> */}
+                    {/* <p><em>Notes: </em>{favorite.notes}</p> */}
                 </div>
             ))}
             <button>Update</button>&nbsp;
