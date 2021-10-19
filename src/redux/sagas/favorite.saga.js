@@ -15,9 +15,9 @@ function* postFav(action) {
 
 function* fetchFav() {
     try {
-        yield console.log('fetchFav wired!');
+        // yield console.log('fetchFav wired!');
         const response = yield axios.get('/api/favorite');
-        yield console.log('this is the response', response.data);
+        // yield console.log('this is the response', response.data);
         yield put({type: 'SET_FAVORITE', payload: response.data})
 
     } catch(error) {
@@ -25,11 +25,15 @@ function* fetchFav() {
     }
 }
 
-function* deleteFav() {
+function* deleteFav(action) {
     try {
-        console.log('deleteFav saga wired!');
-        
-
+        // console.log('deleteFav saga wired!');
+        const favId = action.payload;
+        yield console.log('this is favId to delete', favId);
+        yield axios.delete(`/api/favorite/${favId}`);
+        // GET after DELETE to display updated list
+        yield put({type: 'FETCH_FAVORITE'});
+    
     } catch(error) {
         console.log('error in deleting favorite', error);
         

@@ -4,16 +4,17 @@ const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 /**
- * GET all favorites on the page
+ * GET all user's favorites on the page
  */
 router.get('/', rejectUnauthenticated, (req, res) => {  
-  console.log('this is req.user.id', req.user.id);
+  // console.log('this is req.user.id', req.user.id);
   const userId = req.user.id;
   // list of favorited businesses by user
   const queryText = `SELECT "business"."id", "business"."name", "business"."notes" FROM "business"
   JOIN "favorite" ON "business"."id" = "favorite"."business_id"
   WHERE "favorite"."user_id" = $1
-  GROUP BY "business"."id", "business"."name", "business"."notes";`;
+  GROUP BY "business"."id", "business"."name", "business"."notes"
+  ORDER BY "name" ASC;`;
   
   pool.query(queryText, [userId])
     .then(result => {
@@ -24,10 +25,24 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 });
 
 /**
- * POST route template
+ * DELETE a favorite in logged user's profile
  */
-router.post('/', (req, res) => {
-  // POST route code here
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+  console.log('this is ID of favorite to delete: ', req.params.id);
+  console.log('this is logged in user ID: ', req.user.id);
+  const favId = req.params.id;
+  const userId = req.user.id;
+  const deleteQuery = `DELETE FROM "favorite"
+  WHERE "id" = $1
+  AND "user_id" = $2;`;
+  pool.query(deleteQuery, [favId, userId])
+    .then(result => {
+      // console.log('this is result: ', result);
+      res.sendStatus(201)
+    }).catch(error => {
+      console.log('error in deleting favorite business', error);
+     res.sendStatus(500); 
+    })
 });
 
 /**
@@ -49,6 +64,13 @@ router.post('/', (req, res) => {
       
     })
   
+});
+
+/**
+ * POST route template
+ */
+ router.post('/', (req, res) => {
+  // POST route code here
 });
 
 module.exports = router;

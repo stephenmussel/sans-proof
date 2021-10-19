@@ -13,6 +13,13 @@ function ProfilePage() {
         dispatch(action)
     }, [])
 
+    // DELETEs favorite in user profile
+    const deleteFav = (event) => {
+        // console.log('clicked delete favorite button!');
+        const action = {type: 'DELETE_FAVORITE', payload: event.target.value}
+        dispatch(action);
+    }
+
     return(
         <div>
             <h3>{user.username}'s Profile</h3>
@@ -24,6 +31,8 @@ function ProfilePage() {
                     <FavoriteItem 
                         favorite={favorite}
                     />
+                    <button>Edit Notes</button>&nbsp;
+                    <button value={favorite.id} onClick={(event) => deleteFav(event)}>Delete</button><br /><br />
                 </div>
             ))}
         </div>

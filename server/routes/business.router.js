@@ -73,7 +73,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
  * DELETE a business that logged in user added
  */
  router.delete('/:id', rejectUnauthenticated, (req, res) => {
-   console.log('this ID of business to delete: ', req.params.id);
+   console.log('this is ID of business to delete: ', req.params.id);
    console.log('this is logged in user ID: ', req.user.id);
    
    const busId = req.params.id;
