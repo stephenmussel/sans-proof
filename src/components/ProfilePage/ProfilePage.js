@@ -20,7 +20,7 @@ function ProfilePage() {
         dispatch(action);
     }
 
-    // edits notes
+    // UPDATE notes
     const editFav = (event) => {
         console.log('clicked edit favorite button!');
         

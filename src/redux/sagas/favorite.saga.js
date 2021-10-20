@@ -33,17 +33,24 @@ function* deleteFav(action) {
         yield axios.delete(`/api/favorite/${favId}`);
         // GET after DELETE to display updated list
         yield put({type: 'FETCH_FAVORITE'});
-    
     } catch(error) {
         console.log('error in deleting favorite', error);
-        
     }
+}
+
+function* editFav(action) {
+    yield console.log('editFav saga wired!');
+    console.log('this is action.payload', action.payload);
+    
+    const favEdits = action.payload;
+    
 }
 
 function* favoriteSaga() {
     yield takeLatest('POST_FAVORITE', postFav);
     yield takeLatest('FETCH_FAVORITE', fetchFav);
     yield takeLatest('DELETE_FAVORITE', deleteFav);
+    yield takeLatest('EDIT_FAVORITE', editFav);
 }
 
 export default favoriteSaga;
