@@ -20,6 +20,12 @@ function ProfilePage() {
         dispatch(action);
     }
 
+    // edits notes
+    const editFav = (event) => {
+        console.log('clicked edit favorite button!');
+        
+    }
+
     return(
         <div>
             <h3>{user.username}'s Profile</h3>
@@ -31,7 +37,7 @@ function ProfilePage() {
                     <FavoriteItem 
                         favorite={favorite}
                     />
-                    <button>Edit Notes</button>&nbsp;
+                    <button onClick={(event) => editFav(event)}>Edit Notes</button>&nbsp;
                     <button value={favorite.id} onClick={(event) => deleteFav(event)}>Delete</button><br /><br />
                 </div>
             ))}
