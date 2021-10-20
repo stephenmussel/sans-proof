@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FavoriteItem from '../FavoriteItem/FavoriteItem';
 
@@ -7,6 +7,7 @@ function ProfilePage() {
     const user = useSelector(store => store.user);
     const favoriteList = useSelector(store => store.favorite);
     const dispatch = useDispatch();
+    
 
     useEffect(() => {
         const action = {type: 'FETCH_FAVORITE'}
@@ -20,12 +21,6 @@ function ProfilePage() {
         dispatch(action);
     }
 
-    // UPDATE notes
-    const editFav = (event) => {
-        console.log('clicked edit favorite button!');
-        
-    }
-
     return(
         <div>
             <h3>{user.username}'s Profile</h3>
@@ -37,7 +32,6 @@ function ProfilePage() {
                     <FavoriteItem 
                         favorite={favorite}
                     />
-                    <button onClick={(event) => editFav(event)}>Edit Notes</button>&nbsp;
                     <button value={favorite.id} onClick={(event) => deleteFav(event)}>Delete</button><br /><br />
                 </div>
             ))}

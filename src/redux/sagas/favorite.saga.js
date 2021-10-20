@@ -38,7 +38,7 @@ function* deleteFav(action) {
     }
 }
 
-function* editFav(action) {
+function* updateNotes(action) {
     yield console.log('editFav saga wired!');
     console.log('this is action.payload', action.payload);
     
@@ -50,7 +50,7 @@ function* favoriteSaga() {
     yield takeLatest('POST_FAVORITE', postFav);
     yield takeLatest('FETCH_FAVORITE', fetchFav);
     yield takeLatest('DELETE_FAVORITE', deleteFav);
-    yield takeLatest('EDIT_FAVORITE', editFav);
+    yield takeLatest('UPDATE_NOTES', updateNotes);
 }
 
 export default favoriteSaga;
