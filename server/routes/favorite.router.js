@@ -33,11 +33,11 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
   const favId = req.params.id;
   const userId = req.user.id;
   const deleteQuery = `DELETE FROM "favorite"
-  WHERE "id" = $1
+  WHERE "business_id" = $1
   AND "user_id" = $2;`;
   pool.query(deleteQuery, [favId, userId])
     .then(result => {
-      // console.log('this is result: ', result);
+      console.log('this is result: ', result.rowCount);
       res.sendStatus(201)
     }).catch(error => {
       console.log('error in deleting favorite business', error);
