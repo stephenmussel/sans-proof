@@ -3,6 +3,7 @@
 -- You must use double quotes in every query that user is in:
 -- ex. SELECT * FROM "user";
 -- Otherwise you will have errors!
+
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR (80) UNIQUE NOT NULL,
@@ -32,7 +33,6 @@ CREATE TABLE "favorite"(
     "business_id" INT REFERENCES "business" 
 );
 
--- testing colita insert
 INSERT INTO "business" 
 	("name", "rating", "description", "address", "city", "state", "zip", "phone", "website", "favorite", "notes", "image_url", "user_id")
 VALUES 
@@ -50,7 +50,6 @@ VALUES
 	'images/sans_url_best.png',
 	'1');
 
--- testing martina insert
 INSERT INTO "business" 
 	("name", "rating", "description", "address", "city", "state", "zip", "phone", "website", "favorite", "notes", "image_url", "user_id")
 VALUES 
@@ -68,7 +67,6 @@ VALUES
 	'images/sans_url_best.png',
 	'2');
 	
--- testing sanjusan insert
 INSERT INTO "business" 
 	("name", "rating", "description", "address", "city", "state", "zip", "phone", "website", "favorite", "notes", "image_url", "user_id")
 VALUES 
@@ -86,7 +84,6 @@ VALUES
 	'images/sans_url_best.png',
 	'2');
 	
--- testing cardamom insert
 INSERT INTO "business" 
 	("name", "rating", "description", "address", "city", "state", "zip", "phone", "website", "favorite", "notes", "image_url", "user_id")
 VALUES 
@@ -104,7 +101,6 @@ VALUES
 	'images/sans_url_better.png',
 	'1');
 
--- testing rosalia insert
 INSERT INTO "business" 
 	("name", "rating", "description", "address", "city", "state", "zip", "phone", "website", "favorite", "notes", "image_url", "user_id")
 VALUES 

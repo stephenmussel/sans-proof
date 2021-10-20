@@ -29,7 +29,7 @@ function* deleteFav(action) {
     try {
         // console.log('deleteFav saga wired!');
         const favId = action.payload;
-        yield console.log('this is favId to delete', favId);
+        // yield console.log('this is favId to delete', favId);
         yield axios.delete(`/api/favorite/${favId}`);
         // GET after DELETE to display updated list
         yield put({type: 'FETCH_FAVORITE'});
