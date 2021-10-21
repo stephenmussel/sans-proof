@@ -39,11 +39,15 @@ function* deleteFav(action) {
 }
 
 function* updateNotes(action) {
-    yield console.log('editFav saga wired!');
-    console.log('this is action.payload', action.payload);
-    
-    const favEdits = action.payload;
-    
+    try {
+        yield console.log('editFav saga wired!');
+        console.log('this is action.payload', action.payload);
+        const newNotes = action.payload;
+        yield axios.put(`/api/favorite/${newNotes}`);
+        yield put ({type: 'FETCH_BUSINESS'});
+    } catch(error) {
+        console.log('error in updating notes', error);
+    }   
 }
 
 function* favoriteSaga() {

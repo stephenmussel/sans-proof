@@ -72,9 +72,19 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
  router.put('/', rejectUnauthenticated, (req, res) => {
   console.log('this is req.body: ', req.body);
   console.log('this is logged in user ID: ', req.user.id);
+  console.log('what is this?', req.params.id);
   
-  
-  
+  const newNote = req.body;
+  const updateQuery = `UPDATE "favorite"
+  SET "notes" = $1
+  WHERE "favorite"."user_id" = $2 AND "favorite"."business_id" = $3;`;
+  pool.query(updateQuery, [newNote, req.user.id, req.params.id])
+    .then(result => {
+      res.sendStatus(201);
+    }).catch(error => {
+      console.log('error in updating note: ', error);
+      res.sendStatus(500)
+    })
 });
 
 /**

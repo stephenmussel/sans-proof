@@ -19,8 +19,6 @@ function FavoriteItem({favorite}) {
         const action = {type: 'UPDATE_NOTES', payload: newNotesObj}
         setNotes('');
         dispatch(action);
-
-        
     }
 
     return(
