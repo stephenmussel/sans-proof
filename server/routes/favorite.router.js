@@ -69,7 +69,7 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
 /**
  * edit notes for favorited business of logged in user
  */
- router.put('/', rejectUnauthenticated, (req, res) => {
+ router.put('/:id', rejectUnauthenticated, (req, res) => {
   console.log('this is req.body: ', req.body);
   console.log('this is logged in user ID: ', req.user.id);
   console.log('what is this?', req.params.id);
