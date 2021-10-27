@@ -7,11 +7,13 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   return (
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
-      <p>Take your shoes off, stay a while. Check out our selection of zero-proof options, 
-        add your own or share some if you're keen. We're all friends, cheers. </p>
-      <LogOutButton className="btn" />
+      <h3>Welcome, {user.username}!</h3>
+      {/* <p>Your ID is: {user.id}</p> */}
+      <p>Take your shoes off, stay a while. Browse our selection 
+        of zero-proof options near you. As a user, you can also add 
+        to this wonderful collection by sharing your favorites spots. 
+        We're all friends here, cheers. </p>
+      {/* <LogOutButton className="btn" /> */}
     </div>
   );
 }
