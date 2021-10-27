@@ -8,6 +8,7 @@ function* postFav(action) {
         const favId = action.payload
         yield axios.post(`/api/favorite/${favId}`);
         // will need to GET when displaying fav in profile
+        yield put({type: 'FETCH_FAVORITE'});
     } catch(error) {
         console.log('error in adding favorite', error);  
     }
@@ -38,23 +39,10 @@ function* deleteFav(action) {
     }
 }
 
-function* updateNotes(action) {
-    try {
-        yield console.log('editFav saga wired!');
-        console.log('this is action.payload', action.payload);
-        const newNotes = action.payload;
-        yield axios.put(`/api/favorite/${newNotes}`);
-        yield put ({type: 'FETCH_BUSINESS'});
-    } catch(error) {
-        console.log('error in updating notes', error);
-    }   
-}
-
 function* favoriteSaga() {
     yield takeLatest('POST_FAVORITE', postFav);
     yield takeLatest('FETCH_FAVORITE', fetchFav);
     yield takeLatest('DELETE_FAVORITE', deleteFav);
-    yield takeLatest('UPDATE_NOTES', updateNotes);
 }
 
 export default favoriteSaga;

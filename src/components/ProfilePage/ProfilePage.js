@@ -22,7 +22,7 @@ function ProfilePage() {
     }
 
     return(
-        <div>
+        <div class="profile">
             <h3>{user.username}'s Profile</h3>
             {/* <p>List of favorite businesses will include: <em><b>Name, </b><b>Notes</b></em></p> */}
             {/* {JSON.stringify(favoriteList)} */}
