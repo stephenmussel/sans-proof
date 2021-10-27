@@ -10,7 +10,8 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Sans /Proof</h2>
+        <img src="images/sans_logo.png"/>
+        {/* <h2 className="nav-title">Sans /Proof</h2> */}
       </Link>
       <div>
         {/* If no user is logged in, show these links */}
