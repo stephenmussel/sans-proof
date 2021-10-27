@@ -19,6 +19,7 @@ function ZeroProofPage() {
     zip: '',
     phone: '',
     website: '',
+    notes: '',
   }
 
   // comes after defaultBus defined!
@@ -62,6 +63,9 @@ function ZeroProofPage() {
       case 'website':
         setBus({...newBus, website: event.target.value})
         break;
+      case 'notes':
+        setBus({...newBus, notes: event.target.value})
+        break;
     }
   }
 
@@ -90,7 +94,7 @@ const deleteBus = (event) => {
         <form onSubmit={addNewBus}> 
           <input id={"name"} type="text" placeholder="name" value={newBus.name} onChange={handleBusInfo}/>
           {/* NUM 3 ...then go to business router*/}
-          <input id={"rating"} type="number" placeholder="rating" value={newBus.rating} onChange={handleBusInfo}/>
+          <input id={"rating"} type="text" placeholder="rating" value={newBus.rating} onChange={handleBusInfo}/>
           <input id={"description"} type="text" placeholder="description" value={newBus.description} onChange={handleBusInfo}/>
           <input id={"address"} type="text" placeholder="address" value={newBus.address} onChange={handleBusInfo}/>
           <input id={"city"} type="text" placeholder="city" value={newBus.city} onChange={handleBusInfo}/>
@@ -98,6 +102,7 @@ const deleteBus = (event) => {
           <input id={"zip"} maxLength="5" type="number" placeholder="zip" value={newBus.zip} onChange={handleBusInfo}/>
           <input id={"phone"} type="text" placeholder="phone" value={newBus.phone} onChange={handleBusInfo}/>
           <input id={"website"} type="text" placeholder="website" value={newBus.website} onChange={handleBusInfo}/>
+          <input id={"notes"} type="text" placeholder="drink options" value={newBus.notes} onChange={handleBusInfo}/>
 
           <input type="submit" value="Add Business"/>
         </form>

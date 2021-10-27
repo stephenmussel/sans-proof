@@ -27,18 +27,18 @@ function ZeroProofDetails() {
     }
 
     return(
-        <div class="details">
+        <div className="details">
             <h3>More details about <em>{businessDetails.name}</em></h3>
             <input type="text" placeholder="add notes"/>
             {/* NOTES: favorite */}
             <button value={businessDetails.id} onClick={(event) => addFav(event)}>Favorite</button>
             {/* <h3>JSON: </h3> */}
             {/* <p>{JSON.stringify(businessDetails)}</p> */}
-            <p><b>Rating: <br /></b>{businessDetails.rating}</p>
-            <p><b>Description: <br /></b>{businessDetails.description}</p>
-            <p><b>Drink Options: <br /></b>{businessDetails.notes}</p>
-            <p><b>Address: <br /></b>{businessDetails.address}<br />{businessDetails.city}, {businessDetails.state} {businessDetails.zip}</p>
-            <p><b>Website: <br /></b>{businessDetails.website}</p>
+            <p><b>Rating<br /></b>{businessDetails.rating}</p>
+            <p><b>Description<br /></b>{businessDetails.description}</p>
+            <p><b>Drink Options<br /></b>{businessDetails.notes}</p>
+            <p><b>Address<br /></b>{businessDetails.address}<br />{businessDetails.city}, {businessDetails.state} {businessDetails.zip}</p>
+            <p><b>Website<br /></b>{businessDetails.website}</p>
 
             {/* <h3>JSON: </h3> */}
                 {/* <p>{JSON.stringify(businessDetails)}</p> */}
