@@ -39,6 +39,7 @@ function ZeroProofDetails() {
             <p><b>Drink Options<br /></b>{businessDetails.notes}</p>
             <p><b>Address<br /></b>{businessDetails.address}<br />{businessDetails.city}, {businessDetails.state} {businessDetails.zip}</p>
             <p><b>Website<br /></b>{businessDetails.website}</p>
+            <p><b>Phone<br /></b>{businessDetails.phone}</p>
 
             {/* <h3>JSON: </h3> */}
                 {/* <p>{JSON.stringify(businessDetails)}</p> */}

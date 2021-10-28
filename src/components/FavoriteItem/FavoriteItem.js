@@ -6,8 +6,8 @@ function FavoriteItem({favorite}) {
 
     return(
         <div>
-            <b>{favorite.name}</b>
-            <p><em>Notes: </em>{favorite.notes}</p>
+            <h3><b>{favorite.name}</b></h3>
+            <p><em><b>Drink Options: </b></em>{favorite.notes}</p>
             {/* <button value={favorite.id} onClick={(event) =>  deleteFav(event)}>Delete</button><br /><br /> */}
         </div>
     )

@@ -23,9 +23,11 @@ function ProfilePage() {
 
     return(
         <div className="profile">
-            <h3>{user.username}'s Profile</h3>
+            <img src="images/profile_pic.png" alt="profile pic" width="75px"/>
+            <h2>{user.username}'s Profile</h2>
             {/* <p>List of favorite businesses will include: <em><b>Name, </b><b>Notes</b></em></p> */}
             {/* {JSON.stringify(favoriteList)} */}
+
             <br /><br />
             {favoriteList.map(favorite => (
                 <div key={favorite.id}>

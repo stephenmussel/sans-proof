@@ -19,19 +19,18 @@ function LandingPage() {
 
       <div className="grid">
         <div className="grid-col grid-col_8">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
-            ut ex molestie blandit. Etiam et turpis sit amet risus mollis
-            interdum. Suspendisse et justo vitae metus bibendum fringilla sed
-            sed justo. Aliquam sollicitudin dapibus lectus, vitae consequat odio
-            elementum eget. Praesent efficitur eros vitae nunc interdum, eu
-            interdum justo facilisis. Sed pulvinar nulla ac dignissim efficitur.
-            Quisque eget eros metus. Vestibulum bibendum fringilla nibh a
-            luctus. Duis a sapien metus.
+    
+          <p><b>Sans /Proof</b> is a mobile application that helps folks find 
+          non-alcoholic AKA zero proof beverage options at nearby bars, restaurants, 
+          and stores. It’s easy to find a good selection of beer, wine, and other 
+          types of alcohol, but sometimes you just want a nice drink without 
+          the buzz.
           </p>
 
-          <p>
+          <img src="images/landing_page.png" alt="coctail and mini carafe"/>
+
+
+          {/* <p>
             Praesent consectetur orci dui, id elementum eros facilisis id. Sed
             id dolor in augue porttitor faucibus eget sit amet ante. Nunc
             consectetur placerat pharetra. Aenean gravida ex ut erat commodo, ut
@@ -49,7 +48,7 @@ function LandingPage() {
             sagittis neque id diam euismod, ut egestas felis ultricies. Nullam
             non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit
             amet nisi.
-          </p>
+          </p> */}
         </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />

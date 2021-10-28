@@ -15,7 +15,7 @@ function AboutPage() {
           you just want a nice drink without the buzz.
         </p>
       </div>
-      <img src="images/about_page.png"/>
+      <img src="images/about_page.png" alt="cocktail in silver wine glass"/>
 
     </div>
   );

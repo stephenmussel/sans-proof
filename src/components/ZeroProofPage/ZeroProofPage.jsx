@@ -88,7 +88,7 @@ const deleteBus = (event) => {
 
   return (
     <div className="container">
-      <h3>Zero Proof</h3>
+      <h2>Zero Proof</h2>
       {/* {JSON.stringify(businessList)} */}
       <div>
         <form onSubmit={addNewBus}> 

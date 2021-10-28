@@ -7,14 +7,14 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   return (
     <div className="container">
-      <h3>Welcome, {user.username}!</h3>
+      <h2>Welcome, {user.username}!</h2>
       {/* <p>Your ID is: {user.id}</p> */}
       <p>Take your shoes off, stay a while. Browse our selection 
         of zero-proof options near you. As a user, you can also add 
         to this wonderful collection by sharing your favorites spots. 
         We're all friends here, cheers. </p>
       {/* <LogOutButton className="btn" /> */}
-      <img src="images/home_page.png"/>
+      <img src="images/home_page.png" alt="coctail with rubber duck sitting in foam"/>
     </div>
   );
 }
