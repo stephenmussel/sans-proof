@@ -42,7 +42,7 @@ Button
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
+  background-color: #5145c9;
   color: #f8f8f8;
   font-size: 1.1rem;
   outline: 0;
@@ -65,7 +65,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #3526c9;
   text-decoration: none;
 }
 

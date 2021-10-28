@@ -14,6 +14,7 @@ function UserPage() {
         to this wonderful collection by sharing your favorites spots. 
         We're all friends here, cheers. </p>
       {/* <LogOutButton className="btn" /> */}
+      <img src="images/home_page.png"/>
     </div>
   );
 }
